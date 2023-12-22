@@ -26,11 +26,7 @@ const mainBody = {
     {
       image: "fa-linkedin",
       url: "https://www.linkedin.com/in/jan-carlo-once-468a8915b/",
-    },
-    {
-      image: "fa-twitter",
-      url: "https://www.twitter.com/home",
-    },
+    }
   ],
 };
 
@@ -41,7 +37,7 @@ const mainBody = {
 //b) a link to an hosted image
 //      i.e:profilePictureLink:"www.picturesonline.com/johnDoeFancyAvatar.jpg",
 //c) image in "editable-stuff" directory and use require("") to import here,
-//      i.e: profilePictureLink: require("../editable-stuff/hashirshoaeb.png"),
+//      i.e: profilePictureLink: require("../editable-stuff/iamge.png"),
 //d) If you do not want any picture to be displayed, just leave it empty :)
 //      i.e: profilePictureLink: "",
 // For Resume either provide link to your resume or import from "editable-stuff" directory
