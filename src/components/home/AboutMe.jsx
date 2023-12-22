@@ -31,39 +31,42 @@ const AboutMe = ({ heading, message, link, imgSize, resume }) => {
   }, [link]);
 
   return (
-    <Jumbotron id="aboutme" className="m-0">
-      <div className="container row">
-        <div className="col-12 col-md-5 d-flex align-items-center mb-4 mb-md-0">
-          {showPic && (
-            <img
-              className="border border-secondary rounded-circle"
-              src={profilePicUrl}
-              alt="profilepicture"
-              width={imgSize}
-              height={imgSize}
-            />
-          )}
+    <div className="container py-5">
+      <Jumbotron id="aboutme" className="m-0">
+        <div className="row justify-content-center"> {/* Updated here */}
+          <div className="col-12 col-md-5 d-flex align-items-center mb-4 mb-md-0">
+            {showPic && (
+              <img
+                className="border border-secondary rounded-circle mx-auto"
+                src={profilePicUrl}
+                alt="profilepicture"
+                style={{ maxWidth: "100%" }}
+                width={imgSize}
+                height={imgSize}
+              />
+            )}
+          </div>
+          <div className={`col-12 col-md-${showPic ? "7" : "12"}`}>
+            <h2 className="display-4 mb-5 text-center">{heading}</h2>
+            <p className="lead text-center">{message}</p>
+            {resume && (
+              <p className="lead text-center">
+                <a
+                  className="btn btn-outline-dark btn-lg"
+                  href={resume}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  role="button"
+                  aria-label="Resume/CV"
+                >
+                  Download CV
+                </a>
+              </p>
+            )}
+          </div>
         </div>
-        <div className={`col-12 col-md-${showPic ? "7" : "12"}`}>
-          <h2 className="display-4 mb-5 text-center">{heading}</h2>
-          <p className="lead text-center">{message}</p>
-          {resume && (
-            <p className="lead text-center">
-              <a
-                className="btn btn-outline-dark btn-lg"
-                href={resume}
-                target="_blank"
-                rel="noreferrer noopener"
-                role="button"
-                aria-label="Resume/CV"
-              >
-                Download CV
-              </a>
-            </p>
-          )}
-        </div>
-      </div>
-    </Jumbotron>
+      </Jumbotron>
+    </div>
   );
 };
 
