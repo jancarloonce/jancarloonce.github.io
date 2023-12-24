@@ -131,14 +131,29 @@ const experiences = {
   heading: "Experiences",
   data: [
     {
-      role: 'Software Engineer',// Here Add Company Name
-      companylogo: require('../assets/img/dell.png'),
-      date: 'June 2018 – Present',
+      role: 'Senior Python Developer',// Here Add Company Name
+      companylogo: require('../assets/img/adaca.png'),
+      date: 'January 2024 – Present',
+      company: 'Adaca'
+      
     },
     {
-      role: 'Front-End Developer',
-      companylogo: require('../assets/img/boeing.png'),
-      date: 'May 2017 – May 2018',
+      role: 'Machine Learning Data Engineer',
+      companylogo: require('../assets/img/odyssey.png'),
+      date: 'November 2023 – December 2023',
+      company: 'Odyssey'
+    },
+    {
+      role: 'Application Developer',
+      companylogo: require('../assets/img/ibm.png'),
+      date: 'February 2019 – August 2023',
+      company: 'IBM'
+    },
+    {
+      role: 'Associate Software Engineer',
+      companylogo: require('../assets/img/accenture.png'),
+      date: 'May 2017 – January 2019',
+      company: 'Accenture'
     },
   ]
 }
