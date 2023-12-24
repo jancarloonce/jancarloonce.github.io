@@ -11,6 +11,7 @@ const Experience = ({ experiences }) => {
     <section className="section">
       <Container>
         <Jumbotron className="bg-white">
+        <div className="row justify-content-center">
           <h2 className="display-4 mb-5 text-center">
             {experiences.heading}
           </h2>
@@ -21,6 +22,7 @@ const Experience = ({ experiences }) => {
               })
             }
           </Row>
+          </div>
         </Jumbotron>
       </Container>
     </section>
