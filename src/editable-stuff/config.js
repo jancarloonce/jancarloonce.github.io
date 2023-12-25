@@ -9,7 +9,7 @@ const mainBody = {
   firstName: "Jan Carlo",
   middleName: "",
   lastName: "Once",
-  message: " Passionate about changing the world with technology. ",
+  message: " Changing the world with technology one step at a time. ",
   icons: [
     {
       image: "fa-github",
@@ -64,7 +64,8 @@ const repos = {
   heading: "Recent Projects",
   gitHubUsername: "jancarloonce", //i.e."johnDoe12Gh"
   reposLength: 4,
-  specificRepos: [],
+  specificRepos: ["jancarloonce.github.io", "leopardgecko-wiki", "daily-logins-api", "product-script-ui"],
+  excludeRepos: ["jancarloonce"]
 };
 
 // Leadership SECTION

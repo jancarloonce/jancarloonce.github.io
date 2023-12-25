@@ -13,10 +13,11 @@ const ProjectCard = ({ value }) => {
     languages_url,
     pushed_at,
   } = value;
+
   return (
-    <Col md={6}>
-      <Card className="card shadow-lg p-3 mb-5 bg-white rounded">
-        <Card.Body>
+    <Col md={6} className="mb-4">
+      <Card className="card shadow-lg p-3 mb-5 bg-white rounded h-100 d-flex flex-column">
+        <Card.Body className="d-flex flex-column">
           <Card.Title as="h5">{name || <Skeleton />} </Card.Title>
           <Card.Text>{(!description) ? "" : description || <Skeleton count={3} />} </Card.Text>
           {svn_url ? <CardButtons svn_url={svn_url} /> : <Skeleton count={2} />}
@@ -26,12 +27,12 @@ const ProjectCard = ({ value }) => {
           ) : (
             <Skeleton count={3} />
           )}
-          {value ? (
-            <CardFooter star_count={stargazers_count} repo_url={svn_url} pushed_at={pushed_at} />
-          ) : (
-            <Skeleton />
-          )}
         </Card.Body>
+        {value ? (
+          <CardFooter star_count={stargazers_count} repo_url={svn_url} pushed_at={pushed_at} />
+        ) : (
+          <Skeleton />
+        )}
       </Card>
     </Col>
   );
@@ -39,14 +40,14 @@ const ProjectCard = ({ value }) => {
 
 const CardButtons = ({ svn_url }) => {
   return (
-    <div className="d-grid gap-2 d-md-block">
+    <div className="mt-auto d-grid gap-2 d-md-block">
       <a
         href={`${svn_url}/archive/master.zip`}
         className="btn btn-outline-secondary mx-2"
       >
         <i className="fab fa-github" /> Clone Project
       </a>
-      <a href={svn_url} target=" _blank" className="btn btn-outline-secondary mx-2">
+      <a href={svn_url} target="_blank" className="btn btn-outline-secondary mx-2">
         <i className="fab fa-github" /> Repo
       </a>
     </div>
@@ -85,7 +86,7 @@ const Language = ({ languages_url, repo_url }) => {
             key={language}
             className="card-link"
             href={repo_url + `/search?l=${language}`}
-            target=" _blank"
+            target="_blank"
             rel="noopener noreferrer"
           >
             <span className="badge bg-light text-dark">
@@ -125,10 +126,10 @@ const CardFooter = ({ star_count, repo_url, pushed_at }) => {
   }, [handleUpdatetime]);
 
   return (
-    <p className="card-text">
+    <p className="card-text mt-auto">
       <a
         href={repo_url + "/stargazers"}
-        target=" _blank"
+        target="_blank"
         className="text-dark text-decoration-none"
       >
         <span className="text-dark card-link mr-4">
