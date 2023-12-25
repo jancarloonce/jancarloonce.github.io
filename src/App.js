@@ -52,7 +52,7 @@ const Home = React.forwardRef((props, ref) => {
           <Experience experiences={experiences}/>
         )
       }
-     {<Timeline experiences={timelineElements}/>}
+     {<Timeline heading={experiences.heading} experiences={timelineElements}/>}
      
       {repos.show && (
         <Project

@@ -50,7 +50,7 @@ const about = {
   imageLink: require("../editable-stuff/profile.jpg"),
   imageSize: 375,
   message:
-    "My name is Jan Carlo. I graduated in 2017 from Quezon City University with a degree in Information Technology. I'm most passionate about giving back to the community, and my goal is to pursue this passion within the field of software engineering. In my free time I like working on open source projects.",
+    "Hi! I'm Jan Carlo, a 2017 graduate of Quezon City University with a degree in Information Technology. My primary interest revolves around community contribution, and I aim to channel this passion into the field of software engineering. In my free time, I find enjoyment in participating in open-source projects.",
   resume: require("../editable-stuff/resume.pdf"),
 };
 
@@ -119,7 +119,7 @@ const skills = {
 
 // GET IN TOUCH SECTION
 const getInTouch = {
-  show: false,
+  show: true,
   heading: "Get In Touch",
   message:
     "I'm currently looking for full-time Software Engineering or Machine Learning opportunities! If you know of any positions available, if you have any questions, or if you just want to say hi, please feel free to email me at",
