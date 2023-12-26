@@ -1,16 +1,14 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 import './Certifications.css';
 
-const Certifications = ({ certificationData }) => {
-  const addHoverClass = (element) => {
-    element.classList.add('hovered');
+const Certifications = ({ heading, certificationData }) => {
+  const [selectedIndex, setSelectedIndex] = useState(null);
+
+  const toggleSelection = (index) => {
+    setSelectedIndex(index === selectedIndex ? null : index);
   };
 
-  const removeHoverClass = (element) => {
-    element.classList.remove('hovered');
-  };
-
-  const loadScript = (badgeId, index) => {
+  const loadScript = (badgeId) => {
     // Create script element
     const script = document.createElement('script');
     script.type = 'text/javascript';
@@ -25,38 +23,27 @@ const Certifications = ({ certificationData }) => {
       document.body.removeChild(script);
     };
   };
-
-  useEffect(() => {
-    const badges = document.querySelectorAll('.certification-badge');
-
-    // Add event listeners for touch devices
-    badges.forEach((badge) => {
-      badge.addEventListener('touchstart', () => addHoverClass(badge));
-      badge.addEventListener('touchend', () => removeHoverClass(badge));
-    });
-
-    // Cleanup event listeners on component unmount
-    return () => {
-      badges.forEach((badge) => {
-        badge.removeEventListener('touchstart', () => addHoverClass(badge));
-        badge.removeEventListener('touchend', () => removeHoverClass(badge));
-      });
-    };
-  }, []);
-
+  
   return (
-    <div className="certifications-container">
-      {certificationData.map((badgeId, index) => (
-        <div key={index} className="certification-badge">
+    <div style={{ textAlign: 'center', margin: '20px' }}>
+      <h2 className="display-4 pb-5 text-center">{heading}</h2>
+      <div className="certifications-container">
+        {certificationData.map((badgeId, index) => (
           <div
-            data-iframe-width="150"
-            data-iframe-height="270"
-            data-share-badge-id={badgeId}
-            data-share-badge-host="https://www.credly.com"
-          ></div>
-          {loadScript(badgeId, index)}
-        </div>
-      ))}
+            key={index}
+            className={`certification-badge ${selectedIndex === index ? 'selected' : ''}`}
+            onClick={() => toggleSelection(index)}
+          >
+            <div
+              data-iframe-width="150"
+              data-iframe-height="270"
+              data-share-badge-id={badgeId}
+              data-share-badge-host="https://www.credly.com"
+            ></div>
+            {loadScript(badgeId)}
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

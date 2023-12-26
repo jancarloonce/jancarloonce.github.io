@@ -63,9 +63,9 @@ const repos = {
   show: true,
   heading: "Recent Projects",
   gitHubUsername: "jancarloonce", //i.e."johnDoe12Gh"
-  reposLength: 4,
-  specificRepos: ["jancarloonce.github.io", "leopardgecko-wiki", "daily-logins-api", "product-script-ui"],
-  excludeRepos: ["jancarloonce"]
+  reposLength: 6,
+  specificRepos: [],
+  excludeRepos: []
 };
 
 // Leadership SECTION
