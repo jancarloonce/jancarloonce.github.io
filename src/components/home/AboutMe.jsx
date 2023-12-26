@@ -51,17 +51,26 @@ const AboutMe = ({ heading, message, link, imgSize, resume }) => {
             <p className="lead text-center">{message}</p>
             {resume && (
               <p className="lead text-center">
-                <a
-                  className="btn btn-outline-dark btn-lg"
-                  href={resume}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  role="button"
-                  aria-label="Resume/CV"
-                >
-                  Download CV
-                </a>
-              </p>
+              <a
+                className="btn btn-outline-dark btn-lg"
+                href={resume}
+                target="_blank"
+                rel="noreferrer noopener"
+                role="button"
+                aria-label="Resume/CV"
+                style={{ backgroundColor: '#000', color: '#fff', borderColor: '#000' }}
+                onMouseOver={(e) => {
+                  e.target.style.backgroundColor = '#fff';
+                  e.target.style.color = '#000';
+                }}
+                onMouseOut={(e) => {
+                  e.target.style.backgroundColor = '#000';
+                  e.target.style.color = '#fff';
+                }}
+              >
+                Download CV
+              </a>
+            </p>
             )}
           </div>
         </div>

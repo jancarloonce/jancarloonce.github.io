@@ -8,10 +8,9 @@
   margin: 10px;
   margin-bottom: 60px; /* Add margin at the bottom */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: 230px;
-  height: 230px;
+  width: 210px;
+  height: 241px;
   box-sizing: border-box; /* Ensure padding and border don't affect the size */
-  overflow: hidden; /* Hide overflow to prevent the iframe from protruding */
   position: relative;
 }
 
@@ -25,9 +24,9 @@
   width: 100%;
   height: 100%;
   position: absolute;
-  top: 50%;
+  top: 0; /* Position the iframe at the top of the badge */
   left: 50%;
-  transform: translate(-50%, -50%); /* Center the iframe within the .certification-badge */
+  transform: translateX(-50%); /* Center the iframe horizontally within the .certification-badge */
 }
 
 /* Adjust the size of the embedded Credly body */
@@ -36,7 +35,6 @@
   height: 120%; /* Increase the height to make the iframe bigger */
   margin-top: 50px; /* Adjust the margin-top as needed */
 }
-
 
 .certification-badge.hovered {
   transform: scale(1.1);
