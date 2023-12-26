@@ -9,7 +9,8 @@ import {
   skills,
   getInTouch,
   experiences,
-  timelineElements
+  timelineElements,
+  certificationsData
 } from "./editable-stuff/config.js";
 import MainBody from "./components/home/MainBody";
 import AboutMe from "./components/home/AboutMe";
@@ -22,10 +23,9 @@ import Skills from "./components/home/Skills";
 import GetInTouch from "./components/home/GetInTouch.jsx";
 import Leadership from "./components/home/Leadership.jsx";
 import Experience from "./components/home/Experience";
-import FloatingMessage from "./components/home/FloatingMessage.jsx";
+// import FloatingMessage from "./components/home/FloatingMessage.jsx";
 import Timeline from "./components/home/Timeline.jsx";
-
-
+import Certifications from "./components/home/Certifications.jsx";
 
 
 const Home = React.forwardRef((props, ref) => {
@@ -52,7 +52,9 @@ const Home = React.forwardRef((props, ref) => {
           <Experience experiences={experiences}/>
         )
       }
-     {<Timeline heading={experiences.heading} experiences={timelineElements}/>}
+     <Certifications heading="Certifications" certificationData={certificationsData} />
+
+     <Timeline heading={experiences.heading} experiences={timelineElements}/>
      
       {repos.show && (
         <Project
@@ -77,7 +79,7 @@ const Home = React.forwardRef((props, ref) => {
           softSkills={skills.softSkills}
         />
       )}
-      <FloatingMessage />
+      
       
     </>
   );
@@ -87,6 +89,7 @@ const App = () => {
   const titleRef = React.useRef();
 
   return (
+    
     <BrowserRouter basename={process.env.PUBLIC_URL + "/"}>
       {navBar.show && <Navbar ref={titleRef} />}
       <Routes>
@@ -94,6 +97,7 @@ const App = () => {
       </Routes>
       {/* {false && <Route path="/blog" exact component={Blog} />}
       {false && <Route path="/blog/:id" component={BlogPost} />} */}
+      
       <Footer>
         {getInTouch.show && (
           <GetInTouch

@@ -159,6 +159,13 @@ const experiences = {
   ]
 }
 
+const certificationsData = [
+  '116132fc-231b-409e-99b9-11087f2fdcee',
+  '9fc7b3d1-d15f-4f50-8c32-20b41f953789',
+  '6bc303e2-7829-4549-946b-382ba204988d',
+  '5f780eae-7505-4766-96ae-39f2532bd24a',
+];
+
 const timelineElements = {
   show: true,
   heading: "Experiences",
@@ -196,4 +203,4 @@ const timelineElements = {
 //   show: false,
 // };
 
-export { navBar, mainBody, about, repos, skills, leadership, getInTouch, experiences, timelineElements };
+export { navBar, mainBody, about, repos, skills, leadership, getInTouch, experiences, timelineElements, certificationsData };
