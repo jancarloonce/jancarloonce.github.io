@@ -27,7 +27,6 @@ import Experience from "./components/home/Experience";
 import Timeline from "./components/home/Timeline.jsx";
 import Certifications from "./components/home/Certifications.jsx";
 
-
 const Home = React.forwardRef((props, ref) => {
   return (
     <>
@@ -105,6 +104,7 @@ const App = () => {
             email={getInTouch.email}
           />
         )}
+        
       </Footer>
     </BrowserRouter>
   );

@@ -21,8 +21,8 @@ const Skills = React.forwardRef(({ heading, skills }, ref) => {
 
   return (
     <Jumbotron ref={skillsTabRef} fluid className="bg-white m-0" id="skills">
-      <Container className="p-5">
-        <h2 ref={skillsTabRef} className="display-4 pb-5 text-center">
+      <Container className="p-1"> {/* Adjust the padding value here */}
+        <h2 ref={skillsTabRef} className="display-4 pb-3 text-center">
           {heading}
         </h2>
         <Tabs
@@ -38,7 +38,7 @@ const Skills = React.forwardRef(({ heading, skills }, ref) => {
               eventKey={`skills-${index}`}
               title={skillCategory.category}
             >
-              <Row className="pt-3 px-1">
+              <Row className="pt-2 px-1">
                 <SkillsTab skills={skillCategory.skills} isScrolled={isScrolled} />
               </Row>
             </Tab>

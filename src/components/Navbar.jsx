@@ -1,3 +1,5 @@
+// Navigation.jsx
+
 import React, { useState } from "react";
 import { useScrollPosition } from "../hooks/useScrollPosition";
 import useResizeObserver from "../hooks/useResizeObserver";
@@ -7,12 +9,12 @@ import { mainBody, repos, about, skills } from "../editable-stuff/config.js";
 import { NavLink } from "./home/migration";
 
 const Navigation = React.forwardRef((props, ref) => {
-  // const { showBlog, FirstName } = config;
   const [isTop, setIsTop] = useState(true);
   const [scrollPosition, setScrollPosition] = useState(0);
   const navbarMenuRef = React.useRef();
   const navbarDimensions = useResizeObserver(navbarMenuRef);
   const navBottom = navbarDimensions ? navbarDimensions.bottom : 0;
+
   useScrollPosition(
     ({ prevPos, currPos }) => {
       if (!navbarDimensions) return;
@@ -44,13 +46,7 @@ const Navigation = React.forwardRef((props, ref) => {
       <Navbar.Toggle aria-controls="basic-navbar-nav" className="toggler" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="navbar-nav mr-auto">
-          {/* {
-            <NavLink className="nav-item lead">
-              <Link to={process.env.PUBLIC_URL + "/blog"}>Blog</Link>
-            </NavLink>
-          } */}
           {repos.show && (
-
             <NavLink
               href={process.env.PUBLIC_URL + "/#projects"}
             >
@@ -81,6 +77,20 @@ const Navigation = React.forwardRef((props, ref) => {
               Skills
             </NavLink>
           )}
+          {/* Add the Experience link here */}
+          <NavLink
+            className="nav-item lead"
+            href={process.env.PUBLIC_URL + "/#experience"}
+          >
+            Experience
+          </NavLink>
+          {/* Add the Contact link here */}
+          <NavLink
+            className="nav-item lead"
+            href={process.env.PUBLIC_URL + "/#contact"}
+          >
+            Contact
+          </NavLink>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

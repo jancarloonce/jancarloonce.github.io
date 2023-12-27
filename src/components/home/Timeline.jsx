@@ -10,7 +10,7 @@ const CustomIcon = ({ src, alt }) => (
 
 const Timeline = ({ heading, experiences }) => {
   return (
-    <div style={{ textAlign: 'center', margin: '20px' }}>
+    <div id="experience" style={{ textAlign: 'center', margin: '20px' }}>
       <h2 className="display-4 pb-5 text-center">{heading}</h2>
       <VerticalTimeline lineColor="Gray">
         {experiences.data.map((experience, index) => (
