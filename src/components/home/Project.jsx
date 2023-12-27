@@ -4,6 +4,8 @@ import { Jumbotron } from "./migration";
 import Row from "react-bootstrap/Row";
 import ProjectCard from "./ProjectCard";
 import axios from "axios";
+import { useSpring, animated } from "react-spring";
+import { useInView } from "react-intersection-observer";
 
 const dummyProject = {
   name: null,
@@ -23,24 +25,39 @@ const Project = ({ heading, username, length, specfic }) => {
   );
 
   const [projectsArray, setProjectsArray] = useState([]);
+  const [ref, inView] = useInView({ triggerOnce: true });
 
   const fetchRepos = useCallback(async () => {
     try {
       // Getting all repos
       const response = await axios.get(allReposAPI);
       // Sorting repos by last update time in descending order
-      const sortedRepos = response.data.sort((a, b) => new Date(b.pushed_at) - new Date(a.pushed_at));
+      const sortedRepos = response.data.sort(
+        (a, b) => new Date(b.pushed_at) - new Date(a.pushed_at)
+      );
       // Taking the top 'length' repos
       const generalRepos = sortedRepos.slice(0, length);
 
       // Adding specified repos
-      const specifiedRepos = await Promise.all(specfic.map(async (repoName) => {
-        const response = await axios.get(`${specficReposAPI}/${repoName}`);
-        return response.data;
-      }));
+      const specifiedRepos = await Promise.all(
+        specfic.map(async (repoName) => {
+          const response = await axios.get(
+            `${specficReposAPI}/${repoName}`
+          );
+          return response.data;
+        })
+      );
 
       // Combining general and specified repos and removing duplicates
-      const repoList = [...generalRepos, ...specifiedRepos.filter(repo => !generalRepos.some(generalRepo => generalRepo.name === repo.name))];
+      const repoList = [
+        ...generalRepos,
+        ...specifiedRepos.filter(
+          (repo) =>
+            !generalRepos.some(
+              (generalRepo) => generalRepo.name === repo.name
+            )
+        ),
+      ];
 
       // Setting projectArray
       setProjectsArray(repoList);
@@ -53,29 +70,36 @@ const Project = ({ heading, username, length, specfic }) => {
     fetchRepos();
   }, [fetchRepos]);
 
+  const springProps = useSpring({
+    opacity: inView ? 1 : 0,
+    transform: inView ? 'translateX(0)' : 'translateX(-50px)',
+  });
+
   return (
-    <Jumbotron fluid id="projects" className="bg-light m-0">
-      <Container className="">
-        <h2 className="display-4 pb-5 text-center">{heading}</h2>
-        <Row>
-          {projectsArray.length
-            ? projectsArray.map((project, index) => (
-              <ProjectCard
-                key={`project-card-${index}`}
-                id={`project-card-${index}`}
-                value={project}
-              />
-            ))
-            : dummyProjectsArr.map((project, index) => (
-              <ProjectCard
-                key={`dummy-${index}`}
-                id={`dummy-${index}`}
-                value={project}
-              />
-            ))}
-        </Row>
-      </Container>
-    </Jumbotron>
+    <animated.div style={springProps} ref={ref}>
+      <Jumbotron fluid id="projects" className="bg-light m-0">
+        <Container className="">
+          <h2 className="display-4 pb-5 text-center">{heading}</h2>
+          <Row>
+            {projectsArray.length
+              ? projectsArray.map((project, index) => (
+                  <ProjectCard
+                    key={`project-card-${index}`}
+                    id={`project-card-${index}`}
+                    value={project}
+                  />
+                ))
+              : dummyProjectsArr.map((project, index) => (
+                  <ProjectCard
+                    key={`dummy-${index}`}
+                    id={`dummy-${index}`}
+                    value={project}
+                  />
+                ))}
+          </Row>
+        </Container>
+      </Jumbotron>
+    </animated.div>
   );
 };
 
