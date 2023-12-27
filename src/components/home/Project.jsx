@@ -1,10 +1,11 @@
+// Project.jsx
 import React, { useState, useEffect, useCallback } from "react";
 import Container from "react-bootstrap/Container";
 import { Jumbotron } from "./migration";
 import Row from "react-bootstrap/Row";
 import ProjectCard from "./ProjectCard";
 import axios from "axios";
-import { useSpring, animated } from "react-spring";
+import { useSpring, animated, config } from "react-spring";
 import { useInView } from "react-intersection-observer";
 
 const dummyProject = {

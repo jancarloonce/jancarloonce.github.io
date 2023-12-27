@@ -1,3 +1,4 @@
+// GetInTouch.jsx
 import React from "react";
 import { useSpring, animated, config } from "react-spring";
 import { useInView } from "react-intersection-observer";
