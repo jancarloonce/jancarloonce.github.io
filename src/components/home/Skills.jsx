@@ -7,10 +7,9 @@ import { Jumbotron } from "./migration";
 import { Container } from "react-bootstrap";
 import { useScrollPosition } from "../../hooks/useScrollPosition";
 
-const Skills = React.forwardRef(({ heading, hardSkills, softSkills }, ref) => {
+const Skills = React.forwardRef(({ heading, skills }, ref) => {
   const skillsTabRef = React.useRef(null);
   const [isScrolled, setIsScrolled] = React.useState(false);
-  //const navbarDimensions = useResizeObserver(navbarMenuRef);
 
   useScrollPosition(
     ({ prevPos, currPos }) => {
@@ -19,36 +18,31 @@ const Skills = React.forwardRef(({ heading, hardSkills, softSkills }, ref) => {
     [],
     skillsTabRef
   );
+
   return (
     <Jumbotron ref={skillsTabRef} fluid className="bg-white m-0" id="skills">
-      <Container className="p-5 ">
+      <Container className="p-5">
         <h2 ref={skillsTabRef} className="display-4 pb-5 text-center">
           {heading}
         </h2>
         <Tabs
           className="skills-tabs"
-          defaultActiveKey="hard-skills"
+          defaultActiveKey="skills-0" // Set the default active tab to "skills-0"
           id="skills-tabs"
           fill
         >
-          <Tab
-            tabClassName="skills-tab lead"
-            eventKey="hard-skills"
-            title="Technical Skills"
-          >
-            <Row className="pt-3 px-1">
-              <SkillsTab skills={hardSkills} isScrolled={isScrolled} />
-            </Row>
-          </Tab>
-          <Tab
-            tabClassName="skills-tab lead"
-            eventKey="soft-skills"
-            title="Soft Skills"
-          >
-            <Row className="pt-3 px-1">
-              <SkillsTab skills={softSkills} isScrolled={isScrolled} />
-            </Row>
-          </Tab>
+          {skills.map((skillCategory, index) => (
+            <Tab
+              key={index}
+              tabClassName="skills-tab lead"
+              eventKey={`skills-${index}`}
+              title={skillCategory.category}
+            >
+              <Row className="pt-3 px-1">
+                <SkillsTab skills={skillCategory.skills} isScrolled={isScrolled} />
+              </Row>
+            </Tab>
+          ))}
         </Tabs>
       </Container>
     </Jumbotron>

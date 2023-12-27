@@ -8,6 +8,7 @@ function SkillsBar({ skill, value, isScrolled }) {
       <ProgressBar
         className={!isScrolled ? "progress" : " progress-bar-animation"}
         now={value}
+        label={`${value}%`}
       />
     </div>
   );

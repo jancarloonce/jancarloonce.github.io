@@ -92,31 +92,92 @@ const leadership = {
   }
 };
 
-// SKILLS SECTION
 const skills = {
   show: true,
   heading: "Skills",
-  hardSkills: [
-    { name: "Python", value: 90 },
-    { name: "SQL", value: 75 },
-    { name: "Data Structures", value: 85 },
-    { name: "C/C++", value: 65 },
-    { name: "JavaScript", value: 90 },
-    { name: "React", value: 65 },
-    { name: "HTML/CSS", value: 55 },
-    { name: "C#", value: 80 },
+  technicalSkills: [
+    {
+      category: "Languages",
+      skills: [
+        { name: "Python", value: 92 },
+        { name: "Java", value: 88 },
+        { name: "JavaScript", value: 90 },
+        { name: "C#", value: 87 },
+        { name: "Bash", value: 88 },
+        { name: "Powershell", value: 87 },
+        // ... other programming languages
+      ],
+    },
+    {
+      category: "Web Development",
+      skills: [
+        { name: "React", value: 84 },
+        { name: "Flask", value: 86 },
+        { name: "Django", value: 86 },
+        { name: "Angular", value: 86 },
+        { name: "Vue", value: 86 },
+        // ... other web development technologies
+      ],
+    },
+    {
+      category: "Big Data Technologies",
+      skills: [
+        { name: "Airflow", value: 92 },
+        { name: "Domino", value: 89 },
+        { name: "Tenserflow", value: 88 },
+        { name: "Nifi", value: 88 },
+        { name: "Hadoop", value: 88 },
+        { name: "Kibana", value: 88 },
+        { name: "Cloudera", value: 90 },
+        { name: "Spark", value: 88 },
+        { name: "Kafka", value: 88 },
+        { name: "SKlear", value: 86 },
+        { name: "Splunk", value: 88 },
+        // ... other big data technologies
+      ],
+    },
+    {
+      category: "Databases",
+      skills: [
+        { name: "Postgres", value: 91 },
+        { name: "MySQL", value: 90 },
+        { name: "MSSQL", value: 86 },
+        { name: "Hive", value: 92 },
+        { name: "Elasticsearch", value: 93 },
+        // ... other databases
+      ],
+    },
+    {
+      category: "DevOps",
+      skills: [
+        { name: "Git", value: 95 },
+        { name: "Docker", value: 87 },
+        { name: "Kubernetes", value: 82 },
+        { name: "Openshift", value: 89},
+        // ... other DevOps technologies
+      ],
+    },
+    {
+      category: "Agile Methodologies",
+      skills: [
+        { name: "Scrum", value: 80 },
+        { name: "Kanban", value: 82 },
+        // ... other agile methodologies
+      ],
+    },
   ],
   softSkills: [
-    { name: "Goal-Oriented", value: 80 },
-    { name: "Collaboration", value: 90 },
-    { name: "Positivity", value: 75 },
-    { name: "Adaptability", value: 85 },
-    { name: "Problem Solving", value: 75 },
-    { name: "Empathy", value: 90 },
-    { name: "Organization", value: 70 },
-    { name: "Creativity", value: 90 },
+    { name: "Goal-Oriented", value: 85 },
+    { name: "Collaboration", value: 88 },
+    { name: "Positivity", value: 90 },
+    { name: "Adaptability", value: 83 },
+    { name: "Problem Solving", value: 82 },
+    { name: "Empathy", value: 89 },
+    { name: "Organization", value: 87 },
+    { name: "Creativity", value: 84 },
   ],
 };
+
 
 // GET IN TOUCH SECTION
 const getInTouch = {
@@ -174,26 +235,30 @@ const timelineElements = {
       role: 'Senior Python Developer',// Here Add Company Name
       companylogo: require('../assets/img/adaca.png'),
       date: 'January 2024 – Present',
-      company: 'Adaca'
+      company: 'Adaca',
+      location: 'Sydney, Australia'
       
     },
     {
       role: 'Machine Learning Data Engineer',
       companylogo: require('../assets/img/odyssey.png'),
       date: 'November 2023 – December 2023',
-      company: 'Odyssey'
+      company: 'Odyssey',
+      location: 'California, USA'
     },
     {
       role: 'Application Developer',
       companylogo: require('../assets/img/ibm.png'),
       date: 'February 2019 – August 2023',
-      company: 'IBM'
+      company: 'IBM',
+      location: 'Quezon City, Philippines'
     },
     {
       role: 'Associate Software Engineer',
       companylogo: require('../assets/img/accenture.png'),
       date: 'May 2017 – January 2019',
-      company: 'Accenture'
+      company: 'Accenture',
+      location: 'Mandaluyong City, Philippines'
     },
   ]
 }

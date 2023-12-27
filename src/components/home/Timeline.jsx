@@ -40,7 +40,9 @@ const Timeline = ({ heading, experiences }) => {
                 backgroundColor: 'rgb(33, 150, 243)', // Always blue
               }}
             />
-            <h3 className="vertical-timeline-element-title">{experience.company}</h3>
+            <h3 className="vertical-timeline-element-title">
+              {experience.company} - {experience.location}
+            </h3>
             <h5 className="vertical-timeline-element-subtitle">{experience.role}</h5>
           </VerticalTimelineElement>
         ))}
