@@ -17,7 +17,7 @@ const AboutMe = ({ heading, message, link, imgSize, resume }) => {
   const springProps = useSpring({
     opacity: inView ? 1 : 0,
     transform: inView ? "translateX(0%)" : "translateX(-100%)",
-    config: { ...config.slow, precision: 0.1 }, // Adjust the speed and precision here
+    config: config.slow, // Adjust the speed here
   });
 
   React.useEffect(() => {
@@ -53,7 +53,8 @@ const AboutMe = ({ heading, message, link, imgSize, resume }) => {
                   alt="profilepicture"
                   style={{
                     maxWidth: "100%",
-                    ...springProps, // Apply the animation props
+                    opacity: springProps.opacity,
+                    transform: springProps.transform,
                   }}
                   width={imgSize}
                   height={imgSize}
@@ -61,35 +62,42 @@ const AboutMe = ({ heading, message, link, imgSize, resume }) => {
               )}
             </div>
             <div className={`col-12 col-md-${showPic ? "7" : "12"}`}>
-              <h2 className="display-4 mb-5 text-center">{heading}</h2>
-              <p className="lead text-center">{message}</p>
-              {resume && (
-                <p className="lead text-center">
-                  <a
-                    className="btn btn-outline-dark btn-lg"
-                    href={resume}
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    role="button"
-                    aria-label="Resume/CV"
-                    style={{
-                      backgroundColor: "#000",
-                      color: "#fff",
-                      borderColor: "#000",
-                    }}
-                    onMouseOver={(e) => {
-                      e.target.style.backgroundColor = "#fff";
-                      e.target.style.color = "#000";
-                    }}
-                    onMouseOut={(e) => {
-                      e.target.style.backgroundColor = "#000";
-                      e.target.style.color = "#fff";
-                    }}
-                  >
-                    Download CV
-                  </a>
-                </p>
-              )}
+              <animated.div
+                style={{
+                  opacity: springProps.opacity,
+                  transform: springProps.transform,
+                }}
+              >
+                <h2 className="display-4 mb-5 text-center">{heading}</h2>
+                <p className="lead text-center">{message}</p>
+                {resume && (
+                  <p className="lead text-center">
+                    <a
+                      className="btn btn-outline-dark btn-lg"
+                      href={resume}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      role="button"
+                      aria-label="Resume/CV"
+                      style={{
+                        backgroundColor: "#000",
+                        color: "#fff",
+                        borderColor: "#000",
+                      }}
+                      onMouseOver={(e) => {
+                        e.target.style.backgroundColor = "#fff";
+                        e.target.style.color = "#000";
+                      }}
+                      onMouseOut={(e) => {
+                        e.target.style.backgroundColor = "#000";
+                        e.target.style.color = "#fff";
+                      }}
+                    >
+                      Download CV
+                    </a>
+                  </p>
+                )}
+              </animated.div>
             </div>
           </div>
         </animated.div>

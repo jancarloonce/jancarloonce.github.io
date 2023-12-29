@@ -50,7 +50,7 @@ const about = {
   imageLink: require("../editable-stuff/profile.jpg"),
   imageSize: 375,
   message:
-    "Hi! I'm Jan Carlo, a 2017 graduate of Quezon City University with a degree in Information Technology. My primary interest revolves around community contribution, and I aim to channel this passion into the field of software engineering. In my free time, I find enjoyment in participating in open-source projects.",
+    "Bringing 7 years of expertise in front and back-end development, I specialize in API and Database design. As a seasoned Data Engineer, I am passionate about AI and ML, holding certifications as a Cloud Practitioner.",
   resume: require("../editable-stuff/resume.pdf"),
 };
 
