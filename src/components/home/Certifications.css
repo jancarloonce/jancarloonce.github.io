@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap; /* Allow badges to wrap to the next line if there's not enough space */
+  gap: 20px; /* Adjust the gap to control the space between badges */
 }
 
 .certification-badge {
@@ -10,9 +11,11 @@
   margin-bottom: 60px; /* Add margin at the bottom */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   width: 210px;
-  height: 265px;
+  height: 270px;
   box-sizing: border-box; /* Ensure padding and border don't affect the size */
   position: relative;
+  padding-top: 20px; /* Adjust the padding to control the space above each badge
+   Add other styling as needed */
 }
 
 .certification-badge:hover,
@@ -74,3 +77,7 @@
 }
 
 /* Add any other styles as needed */
+
+.certification-badge:first-child:hover {
+  height: 300px; /* Adjust the height on hover for the first badge */
+}
