@@ -5,11 +5,12 @@
 }
 
 .certification-badge {
+  background-color: white;
   margin: 10px;
   margin-bottom: 60px; /* Add margin at the bottom */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   width: 210px;
-  height: 241px;
+  height: 265px;
   box-sizing: border-box; /* Ensure padding and border don't affect the size */
   position: relative;
 }
@@ -56,3 +57,20 @@
     transform: scale(1);
   }
 }
+
+.certification-badge {
+  position: relative;
+}
+
+.floating-div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;  /* Set the background color to white */
+  padding: 10px;           /* Adjust padding as needed */
+  border-radius: 8px;      /* Add border-radius for rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  /* Optional: Add box shadow for a subtle effect */
+}
+
+/* Add any other styles as needed */
