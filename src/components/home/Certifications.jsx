@@ -17,7 +17,7 @@ const Certifications = ({ heading, certificationData }) => {
     opacity: inView ? 1 : 0,
     transform: inView ? 'translateX(0)' : 'translateX(50px)',
     config: { ...config.slow, precision: 0.1 },
-  });
+  }); 
 
   const loadScript = (badgeId) => {
     const script = document.createElement('script');

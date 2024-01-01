@@ -222,10 +222,13 @@ const experiences = {
 
 const certificationsData = [
   '116132fc-231b-409e-99b9-11087f2fdcee',
+  'e6e35cba-4c30-49c2-9ab6-2bae8a79c5a0',
   '9fc7b3d1-d15f-4f50-8c32-20b41f953789',
   '6bc303e2-7829-4549-946b-382ba204988d',
   '5f780eae-7505-4766-96ae-39f2532bd24a',
 ];
+
+
 
 const timelineElements = {
   show: true,
