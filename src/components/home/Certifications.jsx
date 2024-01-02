@@ -56,10 +56,11 @@ const Certifications = ({ heading, certificationData }) => {
               onClick={() => toggleSelection(index)}
               style={{ position: 'relative' }}
             >
-              {index === 0 && <div style={coveringDivStyle}></div>}
+              {index === 0 && <div></div>  // add style={coveringDivStyle} for covering expired badge
+              } 
               <div
                 data-iframe-width="150"
-                data-iframe-height="270"
+                data-iframe-height="270" 
                 data-share-badge-id={badgeId}
                 data-share-badge-host="https://www.credly.com"
               ></div>

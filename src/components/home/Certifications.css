@@ -78,6 +78,4 @@
 
 /* Add any other styles as needed */
 
-.certification-badge:first-child:hover {
-  height: 300px; /* Adjust the height on hover for the first badge */
-}
+/* .certification-badge:first-child:hover { height: 300px; } /* Adjust the height on hover for the first badge */
