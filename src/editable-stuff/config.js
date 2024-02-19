@@ -50,7 +50,7 @@ const about = {
   imageLink: require("../editable-stuff/profile.jpg"),
   imageSize: 375,
   message:
-    "Bringing 7 years of expertise in front and back-end development, I specialize in API and Database design. As a seasoned Data Engineer, I am passionate about AI and ML, holding certifications as a Cloud Practitioner.",
+    "I'm a seasoned Software Engineer with a passion for crafting inventive and scalable solutions that cater to the diverse needs of clients and industries. With a rich background in cloud computing, machine learning, data engineering, and web development, I bring a wealth of expertise to every project I undertake. From designing robust data pipelines to developing cutting-edge machine learning models and building user-friendly web applications, I thrive on tackling complex challenges and delivering impactful solutions. Let's connect and explore how my skills and experience can contribute to your organization's success.",
   resume: require("../editable-stuff/resume.pdf"),
 };
 
