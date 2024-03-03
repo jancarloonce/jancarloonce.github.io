@@ -192,13 +192,13 @@ const experiences = {
   show: false,
   heading: "Experiences",
   data: [
-    // {
-    //   role: 'Senior Python Developer',// Here Add Company Name
-    //   companylogo: require('../assets/img/adaca.png'),
-    //   date: 'January 2024 – Present',
-    //   company: 'Adaca'
+    {
+      role: 'Software Engineer',// Here Add Company Name
+      companylogo: require('../assets/img/adaca.png'),
+      date: 'January 2024 – Present',
+      company: 'Adaca'
       
-    // },
+    },
     {
       role: 'Machine Learning Data Engineer',
       companylogo: require('../assets/img/odyssey.png'),
@@ -234,14 +234,14 @@ const timelineElements = {
   show: true,
   heading: "Experiences",
   data: [
-    // {
-    //   role: 'Senior Python Developer',// Here Add Company Name
-    //   companylogo: require('../assets/img/adaca.png'),
-    //   date: 'January 2024 – Present',
-    //   company: 'Adaca',
-    //   location: 'Sydney, Australia'
+    {
+      role: 'Software Engineer',// Here Add Company Name
+      companylogo: require('../assets/img/adaca.png'),
+      date: 'January 2024 – Present',
+      company: 'Adaca',
+      location: 'Sydney, Australia'
       
-    // },
+    },
     {
       role: 'Machine Learning Data Engineer',
       companylogo: require('../assets/img/odyssey.png'),
