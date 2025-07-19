@@ -75,20 +75,20 @@ const leadership = {
   message:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae auctor eu augue ut lectus arcu bibendum at varius. Libero justo laoreet sit amet cursus sit amet. Imperdiet dui accumsan sit amet nulla facilisi morbi. At auctor urna nunc id. Iaculis urna id volutpat lacus laoreet non curabitur gravida. Et magnis dis parturient montes nascetur ridiculus mus mauris. In nisl nisi scelerisque eu ultrices vitae auctor. Mattis nunc sed blandit libero volutpat sed cras ornare. Pulvinar neque laoreet suspendisse interdum consectetur libero.",
   images: [
-    { 
-      img: require("../editable-stuff/profile.jpg"), 
-      label: "First slide label", 
-      paragraph: "Nulla vitae elit libero, a pharetra augue mollis interdum." 
+    {
+      img: require("../editable-stuff/profile.jpg"),
+      label: "First slide label",
+      paragraph: "Nulla vitae elit libero, a pharetra augue mollis interdum."
     },
-    { 
-      img: require("../editable-stuff/profile.jpg"), 
-      label: "Second slide label", 
-      paragraph: "Nulla vitae elit libero, a pharetra augue mollis interdum." 
+    {
+      img: require("../editable-stuff/profile.jpg"),
+      label: "Second slide label",
+      paragraph: "Nulla vitae elit libero, a pharetra augue mollis interdum."
     },
   ],
   imageSize: {
-    width:"615",
-    height:"450"
+    width: "615",
+    height: "450"
   }
 };
 
@@ -153,7 +153,7 @@ const skills = {
         { name: "Git", value: 95 },
         { name: "Docker", value: 87 },
         { name: "Kubernetes", value: 82 },
-        { name: "Openshift", value: 89},
+        { name: "Openshift", value: 89 },
         // ... other DevOps technologies
       ],
     },
@@ -197,7 +197,7 @@ const experiences = {
       companylogo: require('../assets/img/adaca.png'),
       date: 'January 2024 – Present',
       company: 'Adaca'
-      
+
     },
     {
       role: 'Machine Learning Data Engineer',
@@ -221,11 +221,11 @@ const experiences = {
 }
 
 const certificationsData = [
+  '122b2835-1784-4afd-94f1-5dc64b19518f',
   '116132fc-231b-409e-99b9-11087f2fdcee',
   'e6e35cba-4c30-49c2-9ab6-2bae8a79c5a0',
   '9fc7b3d1-d15f-4f50-8c32-20b41f953789',
   '6bc303e2-7829-4549-946b-382ba204988d',
-  '5f780eae-7505-4766-96ae-39f2532bd24a',
 ];
 
 
@@ -240,7 +240,7 @@ const timelineElements = {
       date: 'January 2024 – Present',
       company: 'Adaca',
       location: 'Sydney, Australia'
-      
+
     },
     {
       role: 'Machine Learning Data Engineer',
